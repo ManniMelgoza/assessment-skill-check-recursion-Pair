@@ -11,9 +11,9 @@ findDuplicatesIterative([ 5, 8, 8, 2, 3 ]);
 // [ 8 ]
 findDuplicatesIterative([ 5, 8, 8, 8, 2, 3, 3 ]);
 // [ 8, 3 ] (only one 8; order of elements does not matter)
-findDuplicatesIterative([ 'a', 'word', 'a', 'another', 'word' ]);
-// [ 'word', 'a' ] (order of elements does not matter)
-
+findDuplicatesIterative([ 'a', 'word', 'a's not matter)
+, 'another', 'word' ]);
+// [ 'word', 'a' ] (order of elements doe
 A successful solution will pass the first mocha test.
 
 **PROBLEM 2: findDuplicatesRecursive (1 point)**
@@ -53,24 +53,24 @@ duplicates within it.
 // Your code here
 */
 const findDuplicatesIterative = (array) => {
-  let duplicateArr = [];
-  let countVal = array[array.length - 1];
-
-  //start with the last value and check if any of the values in array equal that current val
-  //everytime the currindex val is pop we call recursion
-  // if it equal we push to duplicate arr
-      // check if the duplicateArr has the same value more than once if it does we pop value and move to the next value
-
-  
-
+  duplicateArr = [];
+  if (array.length === 0) {
+    return duplicateArr;
+  }
+  let popped = array.pop()
+  if (!duplicateArr.includes(popped)) {
+    if (array.includes(popped)) {
+      duplicateArr.push(popped);
+    }
+  }
+  return duplicateArr.concat(findDuplicatesIterative(array))
 };
-
-
-findDuplicatesIterative([ 5, 8, 8, 2, 3 ]);
+debugger
+console.log(findDuplicatesIterative([5, 8, 8, 2, 3]));
 // [ 8 ]
-findDuplicatesIterative([ 5, 8, 8, 8, 2, 3, 3 ]);
+console.log(findDuplicatesIterative([5, 8, 8, 8, 2, 3, 3]));
 // [ 8, 3 ] (only one 8; order of elements does not matter)
-findDuplicatesIterative([ 'a', 'word', 'a', 'another', 'word' ]);
+console.log(findDuplicatesIterative(['a', 'word', 'a', 'another', 'word']));
 // [ 'word', 'a' ] (order of elements does not matter)
 
 

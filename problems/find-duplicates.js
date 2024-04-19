@@ -44,26 +44,51 @@ solution code must meet the following constraints:
 ***********************************************************************/
 
 /* PROBLEM 1. findDuplicatesIterative: Must solve with iteration, not recursion */
+/*
+**PROBLEM 1: findDuplicatesIterative (1 point)**
+Write a function `findDuplicatesIterative`. The function should take an
+inputArray (array) and return an array including all items from the inputArray
+that appear more than once. However, the returned array must NOT have any
+duplicates within it.
+// Your code here
+*/
+const findDuplicatesIterative = (array) => {
+  let duplicateArr = [];
+  let countVal = array[array.length - 1];
 
-// Your code here 
+  //start with the last value and check if any of the values in array equal that current val
+  //everytime the currindex val is pop we call recursion
+  // if it equal we push to duplicate arr
+      // check if the duplicateArr has the same value more than once if it does we pop value and move to the next value
 
+  
+
+};
+
+
+findDuplicatesIterative([ 5, 8, 8, 2, 3 ]);
+// [ 8 ]
+findDuplicatesIterative([ 5, 8, 8, 8, 2, 3, 3 ]);
+// [ 8, 3 ] (only one 8; order of elements does not matter)
+findDuplicatesIterative([ 'a', 'word', 'a', 'another', 'word' ]);
+// [ 'word', 'a' ] (order of elements does not matter)
 
 
 /* PROBLEM 2. findDuplicatesRecursive: Must solve with recursion */
 
-// Your code here 
+// Your code here
 
 
 
 /* PROBLEM 3. findDuplicatesNoDefault: Must use recursion with no default parameters */
 
-// Your code here 
+// Your code here
 
 
 
 /* PROBLEM 4. findDuplicatesChallenge: No for/while loops OR array looping methods */
 
-// Your code here 
+// Your code here
 
 
 /*

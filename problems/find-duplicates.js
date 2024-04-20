@@ -53,19 +53,21 @@ duplicates within it.
 // Your code here
 */
 const findDuplicatesIterative = (array) => {
-  duplicateArr = [];
-  if (array.length === 0) {
-    return duplicateArr;
-  }
-  let popped = array.pop()
-  if (!duplicateArr.includes(popped)) {
-    if (array.includes(popped)) {
-      duplicateArr.push(popped);
+  let duplicates = [];
+  let seen = {};
+
+  for (let i = 0; i < array.length; i++) {
+    let current = array[i];
+
+    if (seen[current] && !duplicates.includes(current)) {
+      duplicates.push(current)
+    } else {
+      seen[current] = true;
     }
   }
-  return duplicateArr.concat(findDuplicatesIterative(array))
+
+  return duplicates
 };
-debugger
 console.log(findDuplicatesIterative([5, 8, 8, 2, 3]));
 // [ 8 ]
 console.log(findDuplicatesIterative([5, 8, 8, 8, 2, 3, 3]));
